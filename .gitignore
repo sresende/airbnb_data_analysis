@@ -1,6 +1,7 @@
 # Big files
 code/01 Data Cleaning and Feature Engineering.ipynb
-
+# Big dataset
+data/listings.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
