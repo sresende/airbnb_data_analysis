@@ -1,2 +1,2 @@
-# airbnb_data_analysis
-Data Analysis from Airbnb Listings
+# capstone_airbnb
+Data Analysis on Airbnb Dataset
