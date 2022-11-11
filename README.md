@@ -12,6 +12,5 @@ Data Analysis on Airbnb Dataset
 
 ##  Recomendations and Conclusions
 
-
-## References:
 ---
+References:
