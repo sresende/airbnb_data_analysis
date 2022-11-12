@@ -6,9 +6,7 @@ Data columns (total 75 columns):
  1   listing_url                                   16640 non-null  object 
  2   scrape_id                                     16640 non-null  int64  		Inside Airbnb "Scrape" this was part of UTC
  3   last_scraped                                  16640 non-null  object 		The date and time this listing was "scraped".
- 4   source                                        16640 non-null  object 		One of "neighbourhood search" or "previous scrape". "neighbourhood search" means that the listing was found by 
-																				searching the city, while "previous scrape" means that the listing was seen in another scrape performed in the 
-																				last 65 days, and the listing was confirmed to be still available on the Airbnb site.
+ 4   source                                        16640 non-null  object 		One of "neighbourhood search" or "previous scrape". "neighbourhood search" means that the listing was found by searching the city, while "previous scrape" means that the listing was seen in another scrape performed in the last 65 days, and the listing was confirmed to be still available on the Airbnb site.
  5   name                                          16631 non-null  object 		Name of the listing
  6   description                                   15840 non-null  object 		Detailed description of the listing
  7   neighborhood_overview                         8956 non-null   object 		Host's description of the neighbourhood
