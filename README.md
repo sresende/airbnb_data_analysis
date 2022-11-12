@@ -26,7 +26,9 @@ abcisto aqui eh uma mudanca
 
 ##  Recomendations and Conclusions
 ---
-abc
+After analyzing the data, we can see that some variables are more important than others in determining the value of accomodation prices. For example, the xxxxx carries more weight than adding a xxxx of the accomodation.
+
+Another conclusion that we can consider is that if you want to add value to accomodation it will be more efficient to include xxx than a xxxx
 
 ---
 **References**: \
