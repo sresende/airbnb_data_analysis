@@ -8,7 +8,10 @@ Several supervised and unsupervised machine learning models were developed consi
 
 Once the final model was selected, an App was developed to predict housing prices using the Streamlit library. This App, in addition to providing the price prediction model, provides an interface to interact with Airbnb data, making it possible to perform an exploratory analysis of the dataset by defining some parameters.
 ## Datasets 
+Two data sets were used in this project. The first 'Listings.csv' with 39,000 hits was acquired through the Airbnb data explorer website [1] and contains information related to all accommodations listed on the website for the quarterly data for the last 12 months (October 2021 to September 2022 )
 
+
+* [`listing.csv`](http://data.insideairbnb.com/united-states/ny/new-york-city/2022-09-07/data/listings.csv.gz) | [Data Dictionary]('../data/dictionary.txt')
 
 ## Data Evaluation
 
