@@ -13,13 +13,12 @@ Once the final model was selected, an App was developed to predict housing price
 ----
 Two data sets were used in this project. The first 'Listings.csv' with 39,000 hits was acquired through the Airbnb data explorer website [1] and contains information related to all accommodations listed on the website for the quarterly data for the last 12 months (Oct 2021 - Sept 2022)
 
-
 * [`listing.csv`](http://data.insideairbnb.com/united-states/ny/new-york-city/2022-09-07/data/listings.csv.gz) | [Data Dictionary](/data/dictionary.txt)
 * [`Neighborhood_price.csv`](http://data.insideairbnb.com/united-states/ny/new-york-city/2022-09-07/data/listings.csv.gz) | [Data Dictionary](/data/dictionary_price.txt)
 
 ## Data Evaluation
 -----
-abc
+abcisto aqui eh uma mudanca
 
 
 ##  Recomendations and Conclusions
