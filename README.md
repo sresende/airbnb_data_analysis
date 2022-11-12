@@ -19,7 +19,9 @@ List of datasets:
 
 After cleaning the data, applying features engineering and input strategies we got a final dataset of size 23645 x 23 to training our machine learning models. 
 
-## Data Evaluation
+![](/images/histogram_prices.png)
+
+## Model Evaluation
 -----
 abcisto aqui eh uma mudanca
 
