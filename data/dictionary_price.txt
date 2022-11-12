@@ -1,0 +1,8 @@
+RangeIndex: 185 entries, 0 to 184
+Data columns (total 2 columns):
+ #   Column                    Non-Null Count  Dtype    Description
+---  ------                    --------------  -----    --------------
+ 0   Neighborhood              185 non-null    object   NYC neighborhood's name
+ 1   Median Price Per Sq Foot  185 non-null    float64  Neighborhood's price per square foot asked for rentals in NYC
+dtypes: float64(1), object(1)
+memory usage: 3.0+ KB
