@@ -1,92 +1,83 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww28300\viewh15020\viewkind0
-\deftab720
-\pard\pardeftab720\partightenfactor0
-
-\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
-RangeIndex: 16640 entries, 0 to 16639\
-Data columns (total 75 columns):\
- #   Column                                        Non-Null Count  Dtype  		Description\
----  ------                                        --------------  -----  		--------------\
- 0   id                                            16640 non-null  int64  		Airbnb's unique identifier for the listing\
- 1   listing_url                                   16640 non-null  object \
- 2   scrape_id                                     16640 non-null  int64  		Inside Airbnb "Scrape" this was part of UTC\
- 3   last_scraped                                  16640 non-null  object 		The date and time this listing was "scraped".\
- 4   source                                        16640 non-null  object 		One of "neighbourhood search" or "previous scrape". "neighbourhood search" means that the listing was found by \
-																searching the city, while "previous scrape" means that the listing was seen in another scrape performed in the \
-																last 65 days, and the listing was confirmed to be still available on the Airbnb site.\
- 5   name                                          16631 non-null  object 		Name of the listing\
- 6   description                                   15840 non-null  object 		Detailed description of the listing\
- 7   neighborhood_overview                         8956 non-null   object 		Host's description of the neighbourhood\
- 8   picture_url                                   16640 non-null  object 		URL to the Airbnb hosted regular sized image for the listing\
- 9   host_id                                       16640 non-null  int64  		Airbnb's unique identifier for the host/user\
- 10  host_url                                      16640 non-null  object 		The Airbnb page for the hostv vests\
- 11  host_name                                     16640 non-null  object \
- 12  host_since                                    16640 non-null  object \
- 13  host_location                                 12917 non-null  object \
- 14  host_about                                    9650 non-null   object \
- 15  host_response_time                            12087 non-null  object \
- 16  host_response_rate                            12087 non-null  object \
- 17  host_acceptance_rate                          11282 non-null  object \
- 18  host_is_superhost                             16639 non-null  object \
- 19  host_thumbnail_url                            16640 non-null  object \
- 20  host_picture_url                              16640 non-null  object \'98\'cd\
- 21  host_neighbourhood                            9328 non-null   object \
- 22  host_listings_count                           16640 non-null  int64  \
- 23  host_total_listings_count                     16640 non-null  int64  \
- 24  host_verifications                            16640 non-null  object \
- 25  host_has_profile_pic                          16640 non-null  object \
- 26  host_identity_verified                        16640 non-null  object \
- 27  neighbourhood                                 8956 non-null   object \
- 28  neighbourhood_cleansed                        16640 non-null  object \
- 29  neighbourhood_group_cleansed                  0 non-null      float64\
- 30  latitude                                      16640 non-null  float64\
- 31  longitude                                     16640 non-null  float64\
- 32  property_type                                 16640 non-null  object \
- 33  room_type                                     16640 non-null  object \
- 34  accommodates                                  16640 non-null  int64  \
- 35  bathrooms                                     0 non-null      float64\
- 36  bathrooms_text                                16514 non-null  object \
- 37  bedrooms                                      15098 non-null  float64\
- 38  beds                                          16197 non-null  float64\
- 39  amenities                                     16640 non-null  object \
- 40  price                                         16640 non-null  object \
- 41  minimum_nights                                16640 non-null  int64  \
- 42  maximum_nights                                16640 non-null  int64  \
- 43  minimum_minimum_nights                        16639 non-null  float64\
- 44  maximum_minimum_nights                        16639 non-null  float64\
- 45  minimum_maximum_nights                        16639 non-null  float64\
- 46  maximum_maximum_nights                        16639 non-null  float64\
- 47  minimum_nights_avg_ntm                        16639 non-null  float64\
- 48  maximum_nights_avg_ntm                        16639 non-null  float64\
- 49  calendar_updated                              0 non-null      float64\
- 50  has_availability                              16640 non-null  object \
- 51  availability_30                               16640 non-null  int64  \
- 52  availability_60                               16640 non-null  int64  \
- 53  availability_90                               16640 non-null  int64  \
- 54  availability_365                              16640 non-null  int64  \
- 55  calendar_last_scraped                         16640 non-null  object \
- 56  number_of_reviews                             16640 non-null  int64  \
- 57  number_of_reviews_ltm                         16640 non-null  int64  \
- 58  number_of_reviews_l30d                        16640 non-null  int64  \
- 59  first_review                                  10067 non-null  object \
- 60  last_review                                   10067 non-null  object \
- 61  review_scores_rating                          10067 non-null  float64\
- 62  review_scores_accuracy                        9879 non-null   float64\
- 63  review_scores_cleanliness                     9878 non-null   float64\
- 64  review_scores_checkin                         9875 non-null   float64\
- 65  review_scores_communication                   9878 non-null   float64\
- 66  review_scores_location                        9873 non-null   float64\
- 67  review_scores_value                           9873 non-null   float64\
- 68  license                                       0 non-null      float64\
- 69  instant_bookable                              16640 non-null  object \
- 70  calculated_host_listings_count                16640 non-null  int64  \
- 71  calculated_host_listings_count_entire_homes   16640 non-null  int64  \
- 72  calculated_host_listings_count_private_rooms  16640 non-null  int64  \
- 73  calculated_host_listings_count_shared_rooms   16640 non-null  int64  \
- 74  reviews_per_month                             10067 non-null  float64\
-dtypes: float64(22), int64(19), object(34)\
+RangeIndex: 16640 entries, 0 to 16639
+Data columns (total 75 columns):
+ #   Column                                        Non-Null Count  Dtype  		Description
+---  ------                                        --------------  -----  		--------------
+ 0   id                                            16640 non-null  int64  		Airbnb's unique identifier for the listing
+ 1   listing_url                                   16640 non-null  object 
+ 2   scrape_id                                     16640 non-null  int64  		Inside Airbnb "Scrape" this was part of UTC
+ 3   last_scraped                                  16640 non-null  object 		The date and time this listing was "scraped".
+ 4   source                                        16640 non-null  object 		One of "neighbourhood search" or "previous scrape". "neighbourhood search" means that the listing was found by 
+																				searching the city, while "previous scrape" means that the listing was seen in another scrape performed in the 
+																				last 65 days, and the listing was confirmed to be still available on the Airbnb site.
+ 5   name                                          16631 non-null  object 		Name of the listing
+ 6   description                                   15840 non-null  object 		Detailed description of the listing
+ 7   neighborhood_overview                         8956 non-null   object 		Host's description of the neighbourhood
+ 8   picture_url                                   16640 non-null  object 		URL to the Airbnb hosted regular sized image for the listing
+ 9   host_id                                       16640 non-null  int64  		Airbnb's unique identifier for the host/user
+ 10  host_url                                      16640 non-null  object 		The Airbnb page for the hostv vests
+ 11  host_name                                     16640 non-null  object 
+ 12  host_since                                    16640 non-null  object 
+ 13  host_location                                 12917 non-null  object 
+ 14  host_about                                    9650 non-null   object 
+ 15  host_response_time                            12087 non-null  object 
+ 16  host_response_rate                            12087 non-null  object 
+ 17  host_acceptance_rate                          11282 non-null  object 
+ 18  host_is_superhost                             16639 non-null  object 
+ 19  host_thumbnail_url                            16640 non-null  object 
+ 20  host_picture_url                              16640 non-null  object 
+ 21  host_neighbourhood                            9328 non-null   object 
+ 22  host_listings_count                           16640 non-null  int64  
+ 23  host_total_listings_count                     16640 non-null  int64  
+ 24  host_verifications                            16640 non-null  object 
+ 25  host_has_profile_pic                          16640 non-null  object 
+ 26  host_identity_verified                        16640 non-null  object
+ 27  neighbourhood                                 8956 non-null   object 
+ 28  neighbourhood_cleansed                        16640 non-null  object 
+ 29  neighbourhood_group_cleansed                  0 non-null      float64
+ 30  latitude                                      16640 non-null  float64
+ 31  longitude                                     16640 non-null  float64
+ 32  property_type                                 16640 non-null  object
+ 33  room_type                                     16640 non-null  object 
+ 34  accommodates                                  16640 non-null  int64  
+ 35  bathrooms                                     0 non-null      float64
+ 36  bathrooms_text                                16514 non-null  object 
+ 37  bedrooms                                      15098 non-null  float64
+ 38  beds                                          16197 non-null  float64
+ 39  amenities                                     16640 non-null  object 
+ 40  price                                         16640 non-null  object 
+ 41  minimum_nights                                16640 non-null  int64  
+ 42  maximum_nights                                16640 non-null  int64  
+ 43  minimum_minimum_nights                        16639 non-null  float64
+ 44  maximum_minimum_nights                        16639 non-null  float64
+ 45  minimum_maximum_nights                        16639 non-null  float64
+ 46  maximum_maximum_nights                        16639 non-null  float64
+ 47  minimum_nights_avg_ntm                        16639 non-null  float64
+ 48  maximum_nights_avg_ntm                        16639 non-null  float64
+ 49  calendar_updated                              0 non-null      float64
+ 50  has_availability                              16640 non-null  object 
+ 51  availability_30                               16640 non-null  int64  
+ 52  availability_60                               16640 non-null  int64  
+ 53  availability_90                               16640 non-null  int64  
+ 54  availability_365                              16640 non-null  int64  
+ 55  calendar_last_scraped                         16640 non-null  object 
+ 56  number_of_reviews                             16640 non-null  int64  
+ 57  number_of_reviews_ltm                         16640 non-null  int64  
+ 58  number_of_reviews_l30d                        16640 non-null  int64  
+ 59  first_review                                  10067 non-null  object 
+ 60  last_review                                   10067 non-null  object 
+ 61  review_scores_rating                          10067 non-null  float64
+ 62  review_scores_accuracy                        9879 non-null   float64
+ 63  review_scores_cleanliness                     9878 non-null   float64
+ 64  review_scores_checkin                         9875 non-null   float64
+ 65  review_scores_communication                   9878 non-null   float64
+ 66  review_scores_location                        9873 non-null   float64
+ 67  review_scores_value                           9873 non-null   float64
+ 68  license                                       0 non-null      float64
+ 69  instant_bookable                              16640 non-null  object 
+ 70  calculated_host_listings_count                16640 non-null  int64  
+ 71  calculated_host_listings_count_entire_homes   16640 non-null  int64  
+ 72  calculated_host_listings_count_private_rooms  16640 non-null  int64  
+ 73  calculated_host_listings_count_shared_rooms   16640 non-null  int64  
+ 74  reviews_per_month                             10067 non-null  float64
+dtypes: float64(22), int64(19), object(34)
 memory usage: 9.5+ MB}
