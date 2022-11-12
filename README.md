@@ -1,4 +1,4 @@
-# Prediction Model for Airbnb's Acommodations Price
+# Prediction Models for Airbnb's Acommodations Price
 Data Analysis on Airbnb Dataset
 
 ## Problem Statement
@@ -14,3 +14,4 @@ Data Analysis on Airbnb Dataset
 
 ---
 References:
+[1] [*Airbnb Get the Data Site*](http://insideairbnb.com/get-the-data/) 
