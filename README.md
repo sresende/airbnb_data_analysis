@@ -27,7 +27,7 @@ After cleaning the data, applying features engineering and input strategies we g
 The training dataset with 23 columns in total was scaled and hot encoded before being used to training  the models. Initially, a linear regression model was applied. 
 
 We started our model evaluation checking the baseline model and getting its score which has a negative value of -0.0001 meaning that the model is pretty bad at predictions. 
-At first, we implemented a linear regression model that got a score of xxx on the training set and xxx on the test set. This model could be a good choice in a regression model because its coefficintes can be used  to  interpret or inference the target if the LINE assumptions be met. In this particular case, the LINE assumptions were not be met so we couldn't use its coefficients to inference.
+At first, we implemented a linear regression model that got a score of xxx on the training set and xxx on the test set. This model could be a good choice in a regression model because its coefficintes can be used  to  interpret or inference the target if the LINE assumptions be met. In this particular case, the LINE assumptions were not be met so we couldn't use its coefficients to inference. Then the following models were implemented: K-Nearest Neighbors Regression, Decision Tree Regressor, RainForest Regressor, Recurrent Neural Network associated with gridsearch and stacking techniques.
 
 
 
