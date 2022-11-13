@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import pydeck as pdk
 from urllib.error import URLError
-import folium
+#import folium
 import numpy as np
 import pydeck as pdk
 #from streamlit_folium import folium_static

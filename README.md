@@ -24,7 +24,7 @@ After cleaning the data, applying features engineering and input strategies we g
 
 ## Model Evaluation
 -----
-abcisto aqui eh uma mudanca
+The training dataset with 23 columns in total was scaled and hot encoded before being used to train the models. Initially, a linear regression model was applied.
 
 
 ##  Recomendations and Conclusions
