@@ -17,11 +17,11 @@ List of datasets:
 * [`Listing.csv`](http://data.insideairbnb.com/united-states/ny/new-york-city/2022-09-07/data/listings.csv.gz) | [Dictionary](/data/dictionary.txt)
 * [`Neighborhood_price.csv`](http://data.insideairbnb.com/united-states/ny/new-york-city/2022-09-07/data/listings.csv.gz) | [Dictionary](/data/dictionary_price.txt)
 
-
 After cleaning the data, applying features engineering and input strategies we got a final dataset of size 23645 x 23 to training our machine learning models. 
 
 ![](/images/histogram_prices.png)
 
+(more analysis?!charts?)
 ## Machine Learning Models Evaluation
 -----
 The training dataset with 23 columns in total was scaled and hot encoded before being used to training  the models. Initially, a linear regression model was applied. 
@@ -33,7 +33,7 @@ Below is the benchmark table with the three models that had the best score among
 
 (table)
 
-The rain forest model was the one selected to be used in the Streamlit app to predict the prices simulation. The code for the app can be found at the app folder in this repository.
+The rain forest model was the one selected to be used in the Streamlit app to predict the prices simulation. The code for the app can be found at the app folder in this same repository.
 
 ##  Recomendations and Conclusions
 ---
