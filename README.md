@@ -17,6 +17,7 @@ List of datasets:
 * [`Listing.csv`](http://data.insideairbnb.com/united-states/ny/new-york-city/2022-09-07/data/listings.csv.gz) | [Dictionary](/data/dictionary.txt)
 * [`Neighborhood_price.csv`](http://data.insideairbnb.com/united-states/ny/new-york-city/2022-09-07/data/listings.csv.gz) | [Dictionary](/data/dictionary_price.txt)
 
+
 After cleaning the data, applying features engineering and input strategies we got a final dataset of size 23645 x 23 to training our machine learning models. 
 
 ![](/images/histogram_prices.png)
