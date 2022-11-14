@@ -5,6 +5,9 @@ Data Analysis and Machine Learning on Airbnb Dataset
 -----
 The main purpose of this project is to develop a machine learning model that can predict prices for accommodations there to be listed on the Airbnb website.  Here we consider two types of audience, the main one being Airbnb interested in providing the user with a price suggestion during the listing process based on its main features such as type of accommodation, number of rooms and neighborhood. The secondary stakeholders would be people who are interested in using the Airbnb service by making their properties available for rent on their website and having an idea of how much this service could earn from it.
 
+
+![](/images/map_nyc.png)
+
 Several supervised and unsupervised machine learning models were developed considering the different characteristics of the dataset, pre-processing data,tunning tecniques and than evaluated according to their score and average error sum (RMSE) metrics.
 
 Once the final model was selected, an App was developed to predict housing prices using the Streamlit library. This App, in addition to providing the price prediction model, provides an interface to interact with Airbnb data, making it possible to perform an exploratory analysis of the dataset by defining some parameters.
@@ -40,6 +43,9 @@ The rain forest model was the one selected to be used in the Streamlit app to pr
 
 
 In a second attempt, we try to apply transfer learning using clusters. so we create a new cluster column using KMeans() to replace the neighborhood column and see if the models performs better. For this, a search was performed for the best value of k (k=150), observing the silhouette value.
+![](images/lat_log_price.png)
+![](images/output_cluster.png)
+
 
 ##  Recomendations and Conclusions
 ---
