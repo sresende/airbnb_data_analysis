@@ -26,7 +26,7 @@ After cleaning the data, applying features engineering and input strategies we g
 
 ![](/images/histogram_prices.png)
 
-more charts?
+|section in progess..|
 
 
 ![](images/corr.png)
@@ -52,7 +52,7 @@ In a second attempt, we try to apply transfer learning using clusters. so we cre
 ![](images/output_cluster.png)
 
 
-##  Recomendations and Conclusions
+## Conclusions and Recomendations
 ---
 After analyzing the data, we can see that some variables are more important than others in determining the value of accomodation prices. For example, the xxxxx carries more weight than adding a xxxx of the accomodation.
 
