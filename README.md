@@ -30,6 +30,9 @@ After cleaning the data, applying features engineering and input strategies we g
 
 
 ![](images/corr.png)
+
+![](images/boxplot_top10_neigbohood.png) ![](images/boxplot_group_neigbohood.png)
+
 ## Machine Learning Models Evaluation
 -----
 The training dataset with 23 columns in total was scaled and hot encoded before being used to training  the models. Initially, a linear regression model was applied. 
@@ -39,17 +42,17 @@ At first, we implemented a linear regression model that got a score of xxx on th
 
 Below is the benchmark table with the three models that had the best score among them.
 
-![](images/modelsBenchmark.png)
+![](images/models_benchmark.png)
 
 The rain forest model was the one selected to be used in the Streamlit app to predict the prices simulation. The code for the app can be found at the app folder in this same repository.
 
 
 
 
-
 In a second attempt, we try to apply transfer learning using clusters. so we create a new cluster column using KMeans() to replace the neighborhood column and see if the models performs better. For this, a search was performed for the best value of k (k=150), observing the silhouette value.
+
 ![](images/lat_log_price.png)
-![](images/output_cluster.png)
+
 
 
 ## Conclusions and Recomendations
