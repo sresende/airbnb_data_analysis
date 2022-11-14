@@ -39,7 +39,7 @@ At first, we implemented a linear regression model that got a score of xxx on th
 
 Below is the benchmark table with the three models that had the best score among them.
 
-(table)
+![](images/modelsBenchmark.png)
 
 The rain forest model was the one selected to be used in the Streamlit app to predict the prices simulation. The code for the app can be found at the app folder in this same repository.
 
