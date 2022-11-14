@@ -1,9 +1,16 @@
 from operator import mod
 import pandas as pd
 import numpy as np
+
 import streamlit as st
 import pickle
 from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.compose import ColumnTransformer
+
+
+
 
 # @st.cache
 def load_model():
@@ -75,13 +82,14 @@ room_type = st.selectbox(
     'Select your Acommodation Type?',
     ('Entire home/apt','Private room','Shared room','Hotel room'))
 bedrooms = st.number_input('How many Bedrooms?')
+beds = st.number_input('How many Beds?')
 accommodates = st.number_input('How many people it acommodates?')
 
 minimum_nights = st.number_input('What is the minimum nights to stay?')
 maximum_nights = st.number_input('What is the maximun nights to stay?')
 
 ##########################################
-number_of_reviews = st.number_input('Insert the number of reviews')
+#number_of_reviews = st.number_input('Insert the number of reviews')
 
 ##########################################
 review_scores_rating = st.select_slider(
@@ -105,6 +113,7 @@ bathrooms_type = st.selectbox(
 ########################################
 bathrooms_nbr = st.number_input('What is the number of bathrooms')
 neigh_price_sqft = st.number_input('Insert the price per sqft for your neigboorhood')
+amenities = st.number_input('Insert the number of amenities')
 
 
        
@@ -119,52 +128,72 @@ def get_user_input():
   data_user['room_type'] = room_type
   data_user['accommodates'] = accommodates
   data_user['bedrooms'] = bedrooms
+  data_user['beds'] = beds
   data_user['minimum_nights'] = minimum_nights
   data_user['maximum_nights'] = maximum_nights
-  data_user['number_of_reviews'] = number_of_reviews
+  #data_user['number_of_reviews'] = number_of_reviews
   data_user['review_scores_rating'] = review_scores_rating
   data_user['instant_bookable'] = instant_bookable
   data_user['bathrooms_type'] = bathrooms_type
   data_user['bathrooms_nbr'] = bathrooms_nbr
   data_user['neigh_price_sqft'] = neigh_price_sqft
+  data_user['amenities_count'] = amenities
   print("Tipo de do data_user", type(data_user))
   datas_user.append(data_user)
+
   return pd.DataFrame(datas_user)
 
 
-def process_user_input(df):
-  
-  # Dummify
-  col_dummies = ['neighbourhood_cleansed', 'bathrooms_type', 'room_type']   
-  X_test = pd.get_dummies(df, prefix_sep="__", columns = col_dummies, drop_first = True);
-  # Scalling
-  sc = StandardScaler()
-  return sc.transform(X_test)
+def my_transformer():
+
+    # Reading dataset
+    listing = pd.read_csv('../data/listings_model.csv')
+    df  = listing.copy()
+    df.drop( columns=['host_verifications', 'neighbourhood_group_cleansed',
+                    'latitude', 'longitude', 'description_words', 'description_count','number_of_reviews'],  
+            inplace=True)
+
+    X = df.drop(columns='price')
+    y = np.log(df['price'])
+    print(X.shape)
+    print(y.shape)
+
+    X_train, X_test, y_train, y_test = train_test_split(
+            X,  
+            y,
+            test_size = 0.3,     
+            random_state = 42
+    )
+
+    col_ss = ['accommodates', 'bedrooms','beds', 'minimum_nights', 'maximum_nights',
+            'review_scores_rating', 'bathrooms_nbr', 'neigh_price_sqft', 'amenities_count']
+    col_ohe = ['neighbourhood_cleansed', 'bathrooms_type', 'room_type'] 
+
+    ctx = ColumnTransformer(
+        transformers =[
+            ('ohe', OneHotEncoder(drop = 'if_binary', sparse = False, handle_unknown = 'ignore'), col_ohe),
+            ('ss', StandardScaler(), col_ss)
+        ]
+    )
+
+    #returns an array
+    X_train_sc = ctx.fit_transform(X_train)
+    X_test_sc = ctx.transform(X_test)
+    X_train_sc.shape, X_test_sc.shape
+    return ctx
+
+
 
 if st.button('Submit'):
     
     df = get_user_input()
-    print("retoronou", type(df))
-    df_sc = process_user_input(df)
+    print("Put data user in dataframe: ok!", type(df))
+    
+    ctx = my_transformer()
+    X_user = ctx.transform(df)
+    print(f'size of user input to predict : ', X_user.shape)
+    price = model.predict(X_user)[0]
+    #st.write(f'Price:  ${np.round(np.exp(price),2)}')
+    st.write(f'The {room_type} with {bedrooms} rooms and the capacity to accommodate {accommodates} persons, located in the {neighbourhood_cleansed} neighborhood will cost approximately ${np.round(np.exp(price),2)}')
     
 
-    #if len(user_inputs) > 0:
-     # df_sc = process_user_input(inputs=user_inputs)
-     # price = model.predict(df_sc)
-      #probs = list(model.predict_proba([txt])[0])
-      #prob = probs[0] if pred == 'Edgar Allan Poe' else probs[1]
-      #st.write('The price for ypur accomodation is aproximatly: ', price)
-      #st.metric('Probability', f'{100 * round(prob, 2)}%')
-    #else:
-      #st.write('Too pithy. Try writing something.')
-
-# columns for my X_train
-#       ['host_is_superhost', 'host_has_profile_pic', 'host_identity_verified',
-#       'neighbourhood_cleansed', 'room_type', 'accommodates', 'bedrooms',
-#       'price', 'minimum_nights', 'maximum_nights', 'number_of_reviews',
-#       'review_scores_rating', 'instant_bookable', 'bathrooms_type',
-#       'bathrooms_nbr', 'neigh_price_sqft']
-
-# Setting category columns to Dummify
-# col_dummies = ['neighbourhood_cleansed', 'bathrooms_type', 'room_type']
-# df = pd.get_dummies(df, prefix_sep="__", columns = col_dummies, drop_first = True);

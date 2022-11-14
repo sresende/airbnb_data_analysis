@@ -89,7 +89,7 @@ st.pydeck_chart(
     )
 )
 
-st.map(df, zoom=12)
+#st.map(df, zoom=12)
 
 
 #import leafmap.foliumap as leafmap

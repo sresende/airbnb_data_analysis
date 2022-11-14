@@ -24,27 +24,9 @@ listing.drop(listing[listing['price'] > (Q3 + 1.5 * IQR)].index, inplace=True)
 ## BarChart
 groupby_type = st.selectbox(
     'Barcharts for Average Price Accomodations',
-    ('neighbourhood_group_cleansed','room_type'))
+    ('room_type','neighbourhood_group_cleansed','neighbourhood_cleansed'))
 st.bar_chart(listing.groupby(by=groupby_type).mean()['price'] )
 
-#### histogram data
-st.write("Price Histograms by Room Type")
-# Add histogram data
-x1 = listing[listing['room_type']== 'Entire home/apt']['price']- 2
-x2 = listing[listing['room_type']== 'Private room']['price']
-x3 = listing[listing['room_type']== 'Shared room']['price'] + 2
-x4 = listing[listing['room_type']== 'Hotel room']['price'] + 4
-
-# Group data together
-hist_data = [x1, x2, x3, x4]
-
-group_labels = ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
-
-# Create distplot with custom bin_size
-fig = ff.create_distplot(
-        hist_data, group_labels, bin_size=[5, 7.25, 10, 12.5])
-# Plot!
-st.plotly_chart(fig, use_container_width=True)
 
 ## Histogram
 hist_type = st.selectbox(
@@ -66,7 +48,7 @@ st.pyplot(fig)
 import altair as alt
 room_type = st.selectbox(
     'Scatter Plots by Acommodation Type and Neighborhood',
-    ('Entire home/apt','Private room','Shared room','Hotel room'))
+    ('Hotel room','Shared room','Private room','Entire home/apt'))
 df_room_type = listing[listing['room_type']==room_type]
 
 plt.figure(figsize=(25,8))
@@ -85,3 +67,22 @@ plt.ylabel("Prices");
 st.pyplot(fig)
 #st.sidebar.header("Plotting Data")
 
+
+#### histogram data
+st.write("Price Histograms by Room Type")
+# Add histogram data
+x1 = listing[listing['room_type']== 'Entire home/apt']['price']- 2
+x2 = listing[listing['room_type']== 'Private room']['price']
+x3 = listing[listing['room_type']== 'Shared room']['price'] + 2
+x4 = listing[listing['room_type']== 'Hotel room']['price'] + 4
+
+# Group data together
+hist_data = [x1, x2, x3, x4]
+
+group_labels = ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
+
+# Create distplot with custom bin_size
+fig = ff.create_distplot(
+        hist_data, group_labels, bin_size=[5, 7.25, 10, 12.5])
+# Plot!
+st.plotly_chart(fig, use_container_width=True)
