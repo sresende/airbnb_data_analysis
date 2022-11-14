@@ -31,7 +31,7 @@ After cleaning the data, applying features engineering and input strategies we g
 
 ![](images/corr.png)
 
-![](images/boxplot_top10_neigbohood.png) 
+![](images/boxplot_top10_neigbohood2.png) 
 
 ## Machine Learning Models Evaluation
 -----
