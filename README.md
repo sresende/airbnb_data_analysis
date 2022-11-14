@@ -26,7 +26,9 @@ After cleaning the data, applying features engineering and input strategies we g
 
 ![](/images/histogram_prices.png)
 
-(more charts?)
+more charts?
+
+
 ![](images/corr.png)
 ## Machine Learning Models Evaluation
 -----
