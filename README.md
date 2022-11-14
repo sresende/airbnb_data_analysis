@@ -8,7 +8,9 @@ The main purpose of this project is to develop a machine learning model that can
 
 ![](/images/map_nyc.png)
 
+
 Several supervised and unsupervised machine learning models were developed considering the different characteristics of the dataset, pre-processing data,tunning tecniques and than evaluated according to their score and average error sum (RMSE) metrics.
+![](images/corr.png)
 
 Once the final model was selected, an App was developed to predict housing prices using the Streamlit library. This App, in addition to providing the price prediction model, provides an interface to interact with Airbnb data, making it possible to perform an exploratory analysis of the dataset by defining some parameters.
 
