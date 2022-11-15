@@ -24,12 +24,19 @@ List of datasets:
 
 After cleaning the data, applying features engineering and input strategies we got a final dataset of size 23645 x 23 to training our machine learning models. 
 
+We remove the outliers and started our analysis by looking at how the distribution of price listings behaves in the histogram chart and we could observe that the data is skewed to the right. 
+
 ![](/images/histogram_prices.png)
 
-|section in progess..|
+When this happens, it is common to apply a logarithmic transformation to the target (price) in an attempt to correct it. In our specific case, we applied this transformation and achieved a slight increase in test and training scores in most of our models.
 
+If we look at the correlation between the characteristics of the dataset, we can observe that the variables 'accommodations', 'bedrooms', 'beds', 'bathrooms_nbr', 'neigh_price_sqft' have a higher correlation among the 23 characteristics found in the dataset but the first three ('bedrooms', 'beds') are very related to each other (multicolinearity).
 
 ![](images/corr.png)
+
+ Longitude and latitude also have a relatively strong relationship with price, however we can understand that this information is already 'included' in the category variable neighborhood. 
+ 
+ The boxplot below shows the 10 highest priced neighborhoods in NYC and the neighborhood group they're belong to.
 
 ![](images/boxplot_top10_neigbohood2.png) 
 
