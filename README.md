@@ -56,7 +56,7 @@ The Rain Forest model had the scores 0.8866 (Train), 0.6818 (Test) and 150.465(R
 
 
 
-Later, in a second attempt to buid better models, we try to apply transfer learning using clusters. so we create a new column 'cluster' using KMeans() to replace the column 'neighborhoods' and see if the  performance models increase. For this, a search for best value of k  was performed and returned the k value equals 150 - according to the silhouette value.
+Later, in a second attempt to build better models, we try to apply transfer learning using clusters. so we create a new column 'cluster' using KMeans() to replace the column 'neighborhoods' and see if the  performance models increase. For this, a search for best value of k  was performed and returned the k value equals 150 - according to the silhouette value.
 
 ![](images/output_cluster.png)
 
