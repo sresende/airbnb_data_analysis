@@ -1,4 +1,4 @@
-# Prediction Models for Airbnb's Acommodations Price
+# Prediction Model for Airbnb's Acommodations Price
 Data Analysis and Machine Learning on Airbnb Dataset
 
 ## Problem Statement
@@ -9,7 +9,7 @@ The main purpose of this project is to develop a machine learning model that can
 ![](/images/map_nyc.png)
 
 
-Several supervised and unsupervised machine learning models were developed considering the different characteristics of the dataset, pre-processing data,tunning tecniques and than evaluated according to their score and average error sum (RMSE) metrics.
+Several supervised and unsupervised machine learning models were developed considering the different characteristics of the dataset, pre-processing data, tunning tecniques and than evaluated according to their score and average error sum (RMSE) metrics.
 
 
 Once the final model was selected, an App was developed to predict housing prices using the Streamlit library. This App, in addition to providing the price prediction model, provides an interface to interact with Airbnb data, making it possible to perform an exploratory analysis of the dataset by defining some parameters.
@@ -42,10 +42,11 @@ If we look at the correlation between the characteristics of the dataset, we can
 
 ## Machine Learning Models Evaluation
 -----
-The training dataset with 23 columns in total was scaled and hot encoded before being used to training  the models. Initially, a linear regression model was applied. 
+The dataset with 23 columns in total was scaled and hot encoded before being used to training our models. We started our model evaluation checking the baseline model and getting its score which has a negative value of -0.0001 meaning that the model is pretty bad at predictions. 
 
-We started our model evaluation checking the baseline model and getting its score which has a negative value of -0.0001 meaning that the model is pretty bad at predictions. 
-At first, we implemented a linear regression model that got a score of xxx on the training set and xxx on the test set. This model could be a good choice in a regression model because its coefficintes can be used  to  interpret or inference the target if the LINE assumptions be met. In this particular case, the LINE assumptions were not met so we couldn't use its coefficients to inference. Then the following models were implemented: K-Nearest Neighbors Regression, Decision Tree Regressor, RainForest Regressor, Recurrent Neural Network associated with gridsearch and stacking techniques. 
+At first, we implemented a linear regression model and got a score of 0.64932 on the training set and -4.4354 on the test set. A Linear Regression model can be a good choice in a regression problem because its coefficintes can be used  to  interpret or to do inference at the target variable if the LINE assumptions be met. In this particular case, the LINE assumptions were not met so we couldn't use its coefficients to inference. Following, we applied lasso and ridge reguralization to see if it can improve its performance and we got the scored for Lasso 0.6361(Train), 0.6272 (Test) and 144.961 (RMSE). The scores for Ridge were 0.6401 (Train), 0.6295 (Test) and 144.774 (RMSE).
+
+Then the following models were implemented: K-Nearest Neighbors Regression, Decision Tree Regressor, RainForest Regressor, Recurrent Neural Network associated with gridsearch and stacking techniques. 
 
 Below is the benchmark table with the three models that had the best score among them.
 
@@ -54,21 +55,21 @@ Below is the benchmark table with the three models that had the best score among
 The rain forest model was the one selected to be used in the Streamlit app to predict the prices simulation. The code for the app can be found at the app folder in this same repository.
 
 
-
-
 In a second attempt, we try to apply transfer learning using clusters. so we create a new cluster column using KMeans() to replace the neighborhood column and see if the models performs better. For this, a search was performed for the best value of k (k=150), observing the silhouette value.
 
 ![](images/lat_log_price.png)
 
 
 
-## Conclusions and Recomendations
+## Conclusions and Recommendations
 ---
 After analyzing the data, we can see that some variables are more important than others in determining the value of accomodation prices. For example, the xxxxx carries more weight than adding a xxxx of the accomodation.
+
+We tried to apply Transfer Learning and feature engineering 'amenities_count' and 'description_listing_count' but it didn't increased the performance on our models. We also tried to run the  
 
 Another conclusion that we can consider is that if you want to add value to accomodation it will be more efficient to include xxx than a xxxx
 
 ---
 **References**: \
-[1] [*Airbnb Get the Data Site*](http://insideairbnb.com/get-the-data/) \
+[1] [*Airbnb Get the Data Site*](http://data.insideairbnb.com/united-states/ny/new-york-city/2022-09-07/data/listings.csv.gz) \
 [2] [*StreetEasy NYC Prices Data Dashboard*](https://streeteasy.com/blog/data-dashboard/)
