@@ -155,8 +155,8 @@ def my_transformer():
 
     X = df.drop(columns='price')
     y = np.log(df['price'])
-    print(X.shape)
-    print(y.shape)
+    #print(X.shape)
+    #print(y.shape)
 
     X_train, X_test, y_train, y_test = train_test_split(
             X,  
@@ -179,7 +179,7 @@ def my_transformer():
     #returns an array
     X_train_sc = ctx.fit_transform(X_train)
     X_test_sc = ctx.transform(X_test)
-    X_train_sc.shape, X_test_sc.shape
+    #X_train_sc.shape, X_test_sc.shape
     return ctx
 
 
@@ -187,11 +187,11 @@ def my_transformer():
 if st.button('Submit'):
     
     df = get_user_input()
-    print("Put data user in dataframe: ok!", type(df))
+    #print("Put data user in dataframe: ok!", type(df))
     
     ctx = my_transformer()
     X_user = ctx.transform(df)
-    print(f'size of user input to predict : ', X_user.shape)
+    #print(f'size of user input to predict : ', X_user.shape)
     price = model.predict(X_user)[0]
     #st.write(f'Price:  ${np.round(np.exp(price),2)}')
     st.write(f'The {room_type} with {bedrooms} rooms and the capacity to accommodate {accommodates} persons, located in the {neighbourhood_cleansed} neighborhood will cost approximately ${np.round(np.exp(price),2)}')
