@@ -64,11 +64,12 @@ Later, in a second attempt to buid better models, we try to apply transfer learn
 
 ## Conclusions and Recommendations
 ---
-After analyzing the data, we can see that some variables are more important than others in determining the value of housing prices. For example, increasing the accommodation capacity of people carries more weight than adding necessarily adding a room to the accommodation.
 
-We could get at two conclusions for this project: First one, the feature engineering 'amenities_count' and 'description_listing_count' didn't increased the performance on our models and, the second one,  play around latitude/longitude or cluster with transfer learning didn't also work.
+We could get at two conclusions for this project: first one, the feature engineering 'amenities_count' and 'description_listing_count' didn't increased the performance on our models and, the second one,  play around latitude/longitude or cluster with transfer learning to replace the neighborhood didn't also work.
 
-Another conclusion that we can consider is that if you want to add value to accomodation it will be more efficient to include xxx than a xxxx
+Another conclusion after analyzing the data, it's that some variables are more important than others in determining the accommodation' prices, for example, the neighboord feature carries more weight to the target than the number of beds or baths.
+
+As a suggestion, after these conclusions,  it is consider that if you want to add value to accomodation it will be more efficient increase the capacity of accommodate people than necessarily adding a room for it.
 
 ---
 **References**: \
