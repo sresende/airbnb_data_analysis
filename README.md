@@ -70,6 +70,7 @@ We could get at two conclusions for this project: first one, the feature enginee
 Another conclusion after analyzing the data, it's that some variables are more important than others in determining the accommodation' prices, for example, the neighboord feature carries more weight to the target than the number of beds or baths.
 
 As a suggestion, after these conclusions,  it is consider that if you want to add value to accomodation it will be more efficient increase the capacity of accommodate people than necessarily adding a room for it.
+.
 
 ---
 **References**: \
