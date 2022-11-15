@@ -52,20 +52,21 @@ Below is the benchmark table with the three models that had the best score among
 
 ![](images/models_benchmark.png)
 
-The rain forest model was the one selected to be used in the Streamlit app to predict the prices simulation. The code for the app can be found at the app folder in this same repository.
+The Rain Forest model had the scores 0.8866 (Train), 0.6818 (Test) and 150.465(RMSE) and we chose this one as the best model because it had the higher score on the Test set and not that bad value at RSME. This model was also the one selected to be used in the Streamlit app to predict the prices simulation. The code for the app can be found at the app folder in this same repository.
 
 
-In a second attempt, we try to apply transfer learning using clusters. so we create a new cluster column using KMeans() to replace the neighborhood column and see if the models performs better. For this, a search was performed for the best value of k (k=150), observing the silhouette value.
 
-![](images/lat_log_price.png)
+Later, in a second attempt to buid better models, we try to apply transfer learning using clusters. so we create a new column 'cluster' using KMeans() to replace the column 'neighborhoods' and see if the  performance models increase. For this, a search for best value of k  was performed and returned the k value equals 150 - according to the silhouette value.
+
+![](images/output_cluster.png)
 
 
 
 ## Conclusions and Recommendations
 ---
-After analyzing the data, we can see that some variables are more important than others in determining the value of accomodation prices. For example, the xxxxx carries more weight than adding a xxxx of the accomodation.
+After analyzing the data, we can see that some variables are more important than others in determining the value of housing prices. For example, increasing the accommodation capacity of people carries more weight than adding necessarily adding a room to the accommodation.
 
-We tried to apply Transfer Learning and feature engineering 'amenities_count' and 'description_listing_count' but it didn't increased the performance on our models. We also tried to run the  
+We could get at two conclusions for this project: First one, the feature engineering 'amenities_count' and 'description_listing_count' didn't increased the performance on our models and, the second one,  play around latitude/longitude or cluster with transfer learning didn't also work.
 
 Another conclusion that we can consider is that if you want to add value to accomodation it will be more efficient to include xxx than a xxxx
 
